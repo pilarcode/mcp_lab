@@ -1,10 +1,5 @@
-# Mcp Lab
-Laboratory to learn about mcp servers and mpc clients.
-
-
-## Reference
-[Reasearch](https://github.com/pilarcode/pilarcode/blob/main/docs/mcp_servers.md)
-
+# Model Context Protocol Lab
+A project to keep learning about mcp servers and mpc clients.
 
 ## Get started 
 
