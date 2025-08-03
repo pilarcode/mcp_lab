@@ -1,4 +1,5 @@
 from fastmcp import FastMCP
+from fastmcp.prompts.prompt import Message, PromptMessage, TextContent
 
 #------------------1. CREATE A BASIC MCP SERVER------------------
 # Create a server instance with a descriptive name
@@ -33,6 +34,19 @@ def personalized_greeting(name: str) -> str:
     return f"Hello, {name}! Welcome to the MCP server."
 
 
+# Basic prompt returning a string (converted to user message automatically)
+@mcp.prompt
+def ask_about_topic(topic: str) -> str:
+    """Generates a user message asking for an explanation of a topic."""
+    return f"Can you please explain the concept of '{topic}'?"
+
+# Prompt returning a specific message type
+@mcp.prompt
+def generate_code_request(language: str, task_description: str) -> PromptMessage:
+    """Generates a user message requesting code generation."""
+    content = f"Write a {language} function that performs the following task: {task_description}"
+    return PromptMessage(role="user", content=TextContent(type="text", text=content))
+    
 #------------------5. RUN MCP SERVER------------------
 # To make your server executable, add a __main__ block to your script that calls mcp.run().
 if __name__ == "__main__":
@@ -45,4 +59,5 @@ if __name__ == "__main__":
     
     # Execute the mcp inspector for testing.
     #fastmcp dev server.py --ui-port 9000
+
     
