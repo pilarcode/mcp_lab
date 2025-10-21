@@ -1,33 +1,29 @@
-# Model Context Protocol Lab
-A project to keep learning about mcp servers and mpc clients.
+# MCP (Model Context Protocol)  Lab
 
-## Get started 
+MCP (Model Context Protocol) is an open-source standard for connecting AI applications to external systems.
 
-Create your environment
+Using MCP, AI applications like Claude or ChatGPT can connect to data sources (e.g. local files, databases), tools (e.g. search engines, calculators) and workflows (e.g. specialized prompts)—enabling them to access key information and perform tasks.
 
-```
-python -m venv venv
-```
+Think of MCP like a USB-C port for AI applications. Just as USB-C provides a standardized way to connect electronic devices, MCP provides a standardized way to connect AI applications to external systems.
 
-Activate the environment
-```
-venv\Scripts\activate
-```
+<img width="840" height="328" alt="image" src="https://github.com/user-attachments/assets/eac38cbb-a19b-46e0-bafa-91334b22c9ed" />
 
-Install dependencies
-```
-pip install -r requirements.txt
-```
+# Lifecycle
+The Model Context Protocol (MCP) defines a rigorous lifecycle for client-server connections that ensures proper capability negotiation and state management.
 
-## Usage
+- Initialization: Capability negotiation and protocol version agreement
+- Operation: Normal protocol communication
+- Shutdown: Graceful termination of the connection
 
-Run the mcp server
+<img width="187" height="247" alt="image" src="https://github.com/user-attachments/assets/abe4bf63-db21-4abe-80ad-6ebf64d2b0cc" />
 
-```
-fastmcp run <path_mcp_server>
-```
-
-## Resources
+# Resources
 - https://gofastmcp.com/
 - https://modelcontextprotocol.io/overview
+
+# Courses
+- https://anthropic.skilljar.com/introduction-to-model-context-protocol
+- https://anthropic.skilljar.com/model-context-protocol-advanced-topics
+- https://learn.deeplearning.ai/courses/build-ai-apps-with-mcp-server-working-with-box-files/
+- https://learn.deeplearning.ai/courses/mcp-build-rich-context-ai-apps-with-anthropic/lesson/fkbhh/introduction
 
