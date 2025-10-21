@@ -26,15 +26,22 @@ class MCPClient:
         self._session: Optional[ClientSession] = None
         self._exit_stack: AsyncExitStack = AsyncExitStack()
 
+    # According to the MCP spec, all roots should have a URI that begins with file://.
+    # This function takes the list of paths of that the user provided and turns them into Root objects.
     def _create_roots(self, root_paths: list[str]) -> list[Root]:
         """Convert path strings to Root objects."""
         roots = []
+        
         for path in root_paths:
             p = Path(path).resolve()
             file_url = FileUrl(f"file://{p}")
             roots.append(Root(uri=file_url, name=p.name or "Root"))
         return roots
 
+    # The client doesn't immediately provide the list of roots to the server. Instead, the server can make a request to the client at some future point in time
+    # We make a callback that will be executed when the server requests the roots. 
+    # The callback needs to return the list of roots inside of a ListRootsResult object.
+    # This callback is passed into the ClientSession down on line 62
     async def _handle_list_roots(
         self, context: RequestContext["ClientSession", None]
     ) -> ListRootsResult | ErrorData:

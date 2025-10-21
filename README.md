@@ -16,6 +16,9 @@ The Model Context Protocol (MCP) defines a rigorous lifecycle for client-server 
 - Shutdown: Graceful termination of the connection
 
 <img width="187" height="247" alt="image" src="https://github.com/user-attachments/assets/abe4bf63-db21-4abe-80ad-6ebf64d2b0cc" />
+# Primitives
+
+<img width="1275" height="632" alt="image" src="https://github.com/user-attachments/assets/c5b02546-743f-4f37-a0af-eaf5ac46e318" />
 
 # Resources
 - https://gofastmcp.com/
@@ -26,4 +29,5 @@ The Model Context Protocol (MCP) defines a rigorous lifecycle for client-server 
 - https://anthropic.skilljar.com/model-context-protocol-advanced-topics
 - https://learn.deeplearning.ai/courses/build-ai-apps-with-mcp-server-working-with-box-files/
 - https://learn.deeplearning.ai/courses/mcp-build-rich-context-ai-apps-with-anthropic/lesson/fkbhh/introduction
+
 
