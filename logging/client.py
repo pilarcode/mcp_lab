@@ -7,11 +7,11 @@ server_params = StdioServerParameters(
     args=["run", "server.py"],
 )
 
-
+#The client needs to define logging and progress callbacks, which will automatically be called whenever the server emits log or progress messages
 async def logging_callback(params: LoggingMessageNotificationParams):
     print(params.data)
 
-
+#These callbacks should try to display the provided logging and progress data to the user.
 async def print_progress_callback(
     progress: float, total: float | None, message: str | None
 ):
@@ -23,6 +23,8 @@ async def print_progress_callback(
 
 
 async def run():
+    
+    # Make sure you provide the logging callback to the ClientSession and the progress callback to the call_tool() function.
     async with stdio_client(server_params) as (read, write):
         async with ClientSession(
             read, write, logging_callback=logging_callback
