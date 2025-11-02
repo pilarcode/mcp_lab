@@ -30,4 +30,7 @@ The Model Context Protocol (MCP) defines a rigorous lifecycle for client-server 
 - https://learn.deeplearning.ai/courses/build-ai-apps-with-mcp-server-working-with-box-files/
 - https://learn.deeplearning.ai/courses/mcp-build-rich-context-ai-apps-with-anthropic/lesson/fkbhh/introduction
 
+# Mcp securizados
+- https://gofastmcp.com/servers/auth/authentication
+- https://frontegg.com/blog/oauth
 
